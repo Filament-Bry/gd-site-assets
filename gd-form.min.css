@@ -1,0 +1,28 @@
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2b2b2b;--muted:#6b6b6b;--line:#e6e6e6;--teal:#129aa3;--glow:rgba(18,154,163,.14);--orange:#f36f21;--olive:#8dc63f;--radius:14px;--pad:14px}
+#gd-form{max-width:760px;margin:0 auto;font-family:"Source Sans 3",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.35}
+#gd-form h2{font-family:Montserrat,system-ui,sans-serif;font-weight:700;letter-spacing:.2px;margin:.25rem 0 .5rem}
+#gd-form fieldset{border:1px solid var(--line);border-radius:var(--radius);padding:var(--pad) calc(var(--pad) + 2px);margin:14px 0;background:transparent;transition:border-color .2s,box-shadow .2s}
+#gd-form fieldset:focus-within{border-color:var(--teal);box-shadow:0 0 0 4px var(--glow)}
+#gd-form legend{font-family:Montserrat,system-ui,sans-serif;font-weight:700;letter-spacing:.3px;text-transform:uppercase;font-size:.92rem;color:var(--muted);padding:0 8px}
+fieldset[data-accent=listings] legend{color:var(--teal)}fieldset[data-accent=ads] legend{color:var(--orange)}fieldset[data-accent=cats] legend{color:var(--olive)}
+#gd-form input[type=text],#gd-form input[type=email],#gd-form input[type=tel],#gd-form input[type=number],#gd-form input[type=url],#gd-form textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:transparent;font:inherit;color:inherit;outline:none;transition:border-color .2s,box-shadow .2s,background-color .2s;min-height:44px}
+#gd-form input:focus,#gd-form input[type=url]:focus,#gd-form textarea:focus{border-color:var(--teal);box-shadow:0 0 0 4px var(--glow);background:rgba(255,255,255,.25)}
+#gd-form label input[type=checkbox]{margin-right:6px}#gd-form label{display:inline-flex;align-items:center;gap:6px;white-space:normal}
+#subListings,#subOtherListings,#subAds,#subtotal,#gst,#grandTotal{font-variant-numeric:tabular-nums}.totals{border:1px dashed var(--line);border-radius:var(--radius);padding:var(--pad);margin:12px 0;background:transparent}
+.grid{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}.grand{font-family:Montserrat,system-ui,sans-serif;font-weight:700}
+#gd-form table{width:100%;border-collapse:collapse;font-size:1rem}#gd-form th,#gd-form td{padding:8px 6px}
+#gd-form thead th{border-bottom:1px solid var(--line);font-weight:600;text-transform:uppercase;letter-spacing:.3px;font-size:.85rem;color:var(--muted)}
+#gd-form tbody tr:hover td{background:rgba(18,154,163,.05)}#gd-form tfoot td{border-top:1px solid var(--line)}
+label>input.opt-colour,label>input.opt-design{appearance:none;position:relative;inline-size:42px;block-size:24px;background:#ddd;border-radius:999px;vertical-align:middle;margin-right:8px;cursor:pointer;transition:background .2s}
+label>input.opt-colour::after,label>input.opt-design::after{content:"";position:absolute;inset:3px auto 3px 3px;inline-size:18px;block-size:18px;background:#fff;border-radius:50%;box-shadow:0 1px 2px rgba(0,0,0,.2);transition:transform .2s}
+label>input.opt-colour:checked{background:var(--teal)}label>input.opt-design:checked{background:var(--orange)}label>input.opt-colour:checked::after,label>input.opt-design:checked::after{transform:translateX(18px)}
+.btn-step1,.btn-step2{padding:12px 18px;border:0;border-radius:12px;color:#fff;font-weight:800;letter-spacing:.3px;text-transform:uppercase;cursor:pointer;font-family:Montserrat,system-ui,sans-serif;transition:background-color .2s,transform .1s}
+.btn-step1{background:#a64a58}.btn-step1:hover{background:#8e4250;transform:translateY(-2px)}.btn-step1.completed{background:#6c6c6c;cursor:default}.btn-step2{background:#2f8e89}.btn-step2:hover{background:#27726c;transform:translateY(-2px)}
+#gd-form table{display:table}#gd-form table:not(.no-scroll){overflow-x:auto;display:block}
+@media (max-width:780px){#gd-form fieldset>div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}#gd-form .totals .grid{grid-template-columns:1fr 1fr;column-gap:12px}#gd-form input[type=number]{width:100%!important}}
+@media (max-width:520px){#gd-form .totals .grid{grid-template-columns:1fr;row-gap:6px}#gd-form .row{display:flex;flex-direction:column;gap:10px!important}#gd-form .row+.row,#gd-form .btn-step1,#gd-form .btn-step2{width:100%}}
+@media (max-width:420px){#gd-form h2{font-size:clamp(1.05rem,4.5vw,1.25rem)}#gd-form legend{font-size:.9rem}#gd-form thead th{font-size:.82rem}}
+</style>
