@@ -1,0 +1,75 @@
+<!-- minimal shell expected by your JS/CSS -->
+<div id="gd-form">
+  <h2>Gabriola Directory — Order Form</h2>
+  <p class="help">Totals update automatically. * = required.</p>
+
+  <fieldset>
+    <legend>Contact</legend>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <label>Business Name*<br><input required name="businessName" type="text"></label>
+      <label>Contact Name*<br><input required name="contactName" type="text"></label>
+      <label>Website<br><input name="website" type="url" placeholder="https://"></label>
+      <label>Email*<br><input required name="email" type="email"></label>
+      <label>Phone*<br><input required name="phone" type="tel"></label>
+      <label style="grid-column:1 / -1">Address<br><input name="address" type="text"></label>
+      <label style="grid-column:1 / -1">Notes<br><textarea name="notes" rows="3"></textarea></label>
+    </div>
+  </fieldset>
+
+  <fieldset data-accent="listings">
+    <div class="row">
+      <legend>$60 Business Listings</legend>
+      <label># of listings*<br><input required id="qtyListings" type="number" min="0" value="0" style="width:120px"></label>
+      <div class="pill">× $60 = <span id="subListings">$0</span><p class="help">(Includes free bold name in residential.)</p></div>
+    </div>
+  </fieldset>
+
+  <fieldset data-accent="ads">
+    <legend>Display Ads</legend>
+    <p class="help">Qty per size. Colour/Design are per-ad add-ons.</p>
+    <div style="overflow:auto">
+      <table>
+        <thead><tr>
+          <th style="text-align:left">Ad Size</th>
+          <th style="text-align:right">Base</th>
+          <th style="text-align:center">Qty</th>
+          <th style="text-align:center">+ Colour</th>
+          <th style="text-align:center">+ Design</th>
+          <th style="text-align:right">Row Subtotal</th>
+        </tr></thead>
+        <tbody id="adsBody"></tbody>
+        <tfoot><tr><td colspan="5" style="text-align:right"><strong>Display Ads Subtotal</strong></td><td style="text-align:right"><strong id="subAds">$0</strong></td></tr></tfoot>
+      </table>
+    </div>
+    <p class="help">Listings in other categories: $50 ea.</p>
+    <div class="row" style="margin-top:.25rem">
+      <label>Other-category listings<br><input id="qtyOtherListings" type="number" min="0" value="0" style="width:120px"></label>
+      <div class="pill">× $50 = <span id="subOtherListings">$0</span></div>
+    </div>
+  </fieldset>
+
+  <div class="totals">
+    <div class="grid">
+      <div>Subtotal (Listings + Ads)</div><div id="subtotal">$0</div>
+      <div>GST (5%)</div><div id="gst">$0</div>
+      <div class="grand">Grand Total</div><div id="grandTotal" class="grand">$0</div>
+    </div>
+    <input type="hidden" id="grandTotalRaw" value="0">
+  </div>
+
+  <fieldset data-accent="cats">
+    <legend>Category Heading(s)</legend>
+    <p class="help">e.g., ELECTRICAL, PLUMBING</p>
+    <div style="display:grid;grid-template-columns:1fr;gap:10px">
+      <label>Required* (Primary)<br><input required name="cat1" type="text" placeholder="ELECTRICAL"></label>
+      <label>Optional<br><input name="cat2" type="text" placeholder="PLUMBING"></label>
+      <label>Optional<br><input name="cat3" type="text" placeholder="HEATING"></label>
+    </div>
+  </fieldset>
+
+  <div class="row" style="margin-top:8px;gap:16px;flex-wrap:wrap">
+    <button id="submitBtn" class="btn btn1">Step 1: Place Your Order</button>
+    <button id="stripePay" class="btn btn2" disabled>Step 2: Pay Online</button>
+  </div>
+  <span id="status" style="font-size:.95rem"></span>
+</div>
